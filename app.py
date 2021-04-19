@@ -60,7 +60,7 @@ def indexpage():
         prediction = model.predict_classes(encoded_value)
         isfake = prediction[0][0]
         if(isfake==0):
-            fakestring = "You Are Reading a Fake News,"
+            fakestring = "You Are Reading a Fake News, Check you sources man."
         else:
             fakestring = "Nice, Your Sources of News are correct"
         print(prediction[0][0])
