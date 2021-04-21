@@ -66,6 +66,7 @@ def indexpage():
         print(prediction[0][0])
         
         return render_template('index.html',form = form, predict = fakestring)
+    fakestring = ""
         # print(request.form['title'])
     return render_template('index.html',form = form, predict = fakestring)
 
