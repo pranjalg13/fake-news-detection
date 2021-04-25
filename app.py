@@ -72,3 +72,23 @@ def indexpage():
 
 if __name__ =='__main__':
     app.run(debug=True)
+
+from flask import Flask
+from flask import request
+from flask import render_template
+from flask import flash
+import joblib
+
+app = Flask(__name__)
+
+
+@app.route('/clickbait-home')
+def homepage():
+    return render_template('clickbait-index.html')
+
+@app.route('/clickbait-check',methods=('POST'))
+def checkClickbait():
+    title=request.form['title']
+    if not title:
+        flash('Title Required!!')
+    
