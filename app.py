@@ -4,6 +4,7 @@ from flask import Flask, render_template, request
 from wtforms import Form, TextField, validators, SubmitField, DecimalField, IntegerField
 from utils import get_encoded_text
 from keras.models import load_model
+import pickle
 
 app = Flask(__name__)
 
@@ -42,7 +43,8 @@ class ReusableForm(Form):
 global model
 model = load_model('./trained_models/final_h5_model.h5')
 # Required for model to work
-
+global loaded_model
+loaded_model = pickle.load(open('./trained_models/mnb_model.pkl','rb'))
 
 @app.route("/result",methods=['POST'])
 def getresult():
@@ -70,25 +72,23 @@ def indexpage():
         # print(request.form['title'])
     return render_template('index.html',form = form, predict = fakestring)
 
-if __name__ =='__main__':
-    app.run(debug=True)
-
-from flask import Flask
-from flask import request
-from flask import render_template
-from flask import flash
-import joblib
-
-app = Flask(__name__)
-
-
 @app.route('/clickbait-home')
 def homepage():
     return render_template('clickbait-index.html')
 
 @app.route('/clickbait-check',methods=('POST'))
 def checkClickbait():
+    model = pickle.load(open('model.pkl','rb'))
     title=request.form['title']
     if not title:
-        flash('Title Required!!')
+        pass
     
+
+
+
+
+if __name__ =='__main__':
+    app.run(debug=True)
+
+
+
