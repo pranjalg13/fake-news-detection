@@ -1,10 +1,11 @@
 from flask import Flask
 import tensorflow as tf
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from wtforms import Form, TextField, validators, SubmitField, DecimalField, IntegerField
 from utils import get_encoded_text
 from keras.models import load_model
 import pickle
+import gzip
 
 app = Flask(__name__)
 
@@ -43,8 +44,9 @@ class ReusableForm(Form):
 global model
 model = load_model('./trained_models/final_h5_model.h5')
 # Required for model to work
-global loaded_model
-loaded_model = pickle.load(open('./trained_models/mnb_model.pkl','rb'))
+# global loaded_model
+# with gzip.open('./trained_models/mnb_model.pkl', 'rb') as md:
+#     loaded_model = pickle.load(md)
 
 @app.route("/result",methods=['POST'])
 def getresult():
@@ -65,28 +67,23 @@ def indexpage():
             fakestring = "You Are Reading a Fake News, Check you sources man."
         else:
             fakestring = "Nice, Your Sources of News are correct"
-        print(prediction[0][0])
-        
-        return render_template('index.html',form = form, predict = fakestring)
-    fakestring = ""
+        print(prediction[0][0])        
+        return render_template("result.html",predict = fakestring)
+        # return render_template('index.html',form = form, predict = fakestring)
         # print(request.form['title'])
-    return render_template('index.html',form = form, predict = fakestring)
+    else:
+        return render_template('index.html',form = form)
 
 @app.route('/clickbait-home')
 def homepage():
     return render_template('clickbait-index.html')
 
-@app.route('/clickbait-check',methods=('POST'))
-def checkClickbait():
-    model = pickle.load(open('model.pkl','rb'))
-    title=request.form['title']
-    if not title:
-        pass
+# @app.route('/clickbait-check',methods=['POST'])
+# def checkClickbait():
+#     title=request.form['title']
+#     if not title:
+#         pass
     
-
-
-
-
 if __name__ =='__main__':
     app.run(debug=True)
 
