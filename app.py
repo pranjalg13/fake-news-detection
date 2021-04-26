@@ -50,9 +50,9 @@ class ReusableForm(Form):
 global model
 model = load_model('./trained_models/final_h5_model.h5')
 # Required for model to work
-# global loaded_model
-# with gzip.open('./trained_models/mnb_model.pkl', 'rb') as md:
-#     loaded_model = pickle.load(md)
+global loaded_model
+loaded_model = pickle.load(open('./trained_models/clickbait_model.pkl','rb'))
+
 
 @app.route("/result",methods=['POST'])
 def getresult():
@@ -96,6 +96,3 @@ def checkClickbait():
 ##############################################################
 if __name__ =='__main__':
     app.run(debug=True)
-
-
-
