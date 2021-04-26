@@ -85,7 +85,7 @@ def indexpage():
 #     return render_template('clickbait-index.html')
 
 ########################################################
-@app.route('/clickbait-check',methods=['GET','POST'])
+@app.route('/clickbait',methods=['GET','POST'])
 def checkClickbait():
     isclickbaited = ""
     form = ClickbaitedForm(request.form)
