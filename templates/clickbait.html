@@ -8,12 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-    <hr>
-    <form id="clickbait-form">
-        <input type="text" name="headline" id="headline"><br><br>
-        <button type="submit">Check it!!</button>
+    <hr>    
+    <h1>ClickBait Model</h1>
+    {% for message in form.title.errors %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+    <form method="POST">
+        {{ form.title.label }}
+        {{ form.title }}
+        <br>
+        {{ form.submit }}
     </form>
     <hr>
-    <input type="text" name="result" id="result" readonly>
 </body>
 </html>

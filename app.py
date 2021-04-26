@@ -2,11 +2,9 @@ from flask import Flask
 import tensorflow as tf
 from flask import Flask, render_template, request, redirect
 from wtforms import Form, TextField, validators, SubmitField, DecimalField, IntegerField
-from utils import get_encoded_text
+from utils import get_encoded_text,wordopt
 from keras.models import load_model
 import pickle
-import gzip
-
 ##############################
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -14,6 +12,13 @@ from sklearn.naive_bayes import MultinomialNB
 ##############################
 
 app = Flask(__name__)
+
+class ClickbaitedForm(Form):
+    title = TextField("Enter the Article title", validators=[
+        validators.InputRequired(), validators.Length(min=10,max=1000)
+    ])
+    submit = SubmitField("Submit")
+
 
 class ReusableForm(Form):
     """User entry form for entering specifics for generation"""
@@ -38,25 +43,20 @@ class ReusableForm(Form):
     # Submit button
     submit = SubmitField("Submit")
 
-# def load_keras_model():
-#     """Load in the pre-trained model"""
-#     global model
-#     model = load_model('../trained_models/final_h5_model.h5')
-#     # Required for model to work
-#     global graph
-#     graph = tf.get_default_graph()
-
 # global graph
 global model
 model = load_model('./trained_models/final_h5_model.h5')
 # Required for model to work
-global loaded_model
-loaded_model = pickle.load(open('./trained_models/clickbait_model.pkl','rb'))
 
+global md_from_joblib
+md_from_joblib = joblib.load('./trained_models/clickbait_model.pkl')
 
-@app.route("/result",methods=['POST'])
-def getresult():
-    form = ReusableForm(request.form)
+global tfidf_vectorizer
+tfidf_vectorizer = joblib.load('./trained_models/vectorizer.pkl')
+
+# @app.route("/result",methods=['POST'])
+# def getresult():
+#     form = ReusableForm(request.form)
 
 @app.route("/",methods=['GET', 'POST'])
 def indexpage():
@@ -80,19 +80,29 @@ def indexpage():
     else:
         return render_template('index.html',form = form)
 
-@app.route('/clickbait-home')
-def homepage():
-    return render_template('clickbait-index.html')
+# @app.route('/clickbait-home')
+# def homepage():
+#     return render_template('clickbait-index.html')
+
 ########################################################
-@app.route('/clickbait-check',methods=['POST'])
+@app.route('/clickbait-check',methods=['GET','POST'])
 def checkClickbait():
-    title=request.form['title']
-    if not title:
-        pass
+    isclickbaited = ""
+    form = ClickbaitedForm(request.form)
+    if request.method == "POST" and form.validate():
+        title=request.form['title']
+        print("Title:" + title)
+        clickbaited_title = md_from_joblib.predict(tfidf_vectorizer.transform([title]))
+        clickbaited_title =clickbaited_title[0]
+        if(clickbaited_title==1):
+            isclickbaited = "Yes, the title is clickbaited"
+        else:
+            isclickbaited = "No, the title is not clickbaited"
+        return render_template('result.html',predict =isclickbaited)
     else:
-        md_from_joblib = joblib.load('./trained_models/clickbait_model.pkl')
-        tfidf_vectorizer=joblib.load('./trained_models/vectorizer.pkl')
-        md_from_joblib.predict(tfidf_vectorizer.transform([title]))
+        return render_template('clickbait.html',form=form)
+
+
 ##############################################################
 
 if __name__ =='__main__':
