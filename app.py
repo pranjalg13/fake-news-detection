@@ -7,6 +7,12 @@ from keras.models import load_model
 import pickle
 import gzip
 
+##############################
+import joblib
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+##############################
+
 app = Flask(__name__)
 
 class ReusableForm(Form):
@@ -77,13 +83,17 @@ def indexpage():
 @app.route('/clickbait-home')
 def homepage():
     return render_template('clickbait-index.html')
-
-# @app.route('/clickbait-check',methods=['POST'])
-# def checkClickbait():
-#     title=request.form['title']
-#     if not title:
-#         pass
-    
+########################################################
+@app.route('/clickbait-check',methods=['POST'])
+def checkClickbait():
+    title=request.form['title']
+    if not title:
+        pass
+    else:
+        md_from_joblib = joblib.load('./trained_models/clickbait_model.pkl')
+        tfidf_vectorizer=joblib.load('./trained_models/vectorizer.pkl')
+        md_from_joblib.predict(tfidf_vectorizer.transform([title]))
+##############################################################
 if __name__ =='__main__':
     app.run(debug=True)
 
