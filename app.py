@@ -94,5 +94,6 @@ def checkClickbait():
         tfidf_vectorizer=joblib.load('./trained_models/vectorizer.pkl')
         md_from_joblib.predict(tfidf_vectorizer.transform([title]))
 ##############################################################
+
 if __name__ =='__main__':
     app.run(debug=True)
