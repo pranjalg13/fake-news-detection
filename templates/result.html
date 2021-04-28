@@ -1,155 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet" />
     <title>Result</title>
     <style>
-         html {
-  height: 100%;
-}
-body {
-  margin:0;
-  padding:0;
-  font-family: sans-serif;
-  
-  background: linear-gradient(#141e30, #243b55);
-  background-image: url("{{url_for('static', filename='pic.jpg')}}");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-.heading{
-        text-align: center!important;
-        margin:2%;
-        font-family: 'Girassol', cursive;
-        color:black;
-        font-size: 4rem;
-      }
-a {
-  top:100px;
-  left:480px;
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #03e9f4;
-  background-color: black;
-  font-size: 18px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
-}
+        html {
+            height: 100%;
+        }
 
-a:hover {
-  background: #03e9f4;
-  color: #000;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 100px #03e9f4;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
 
-a span {
-  position: absolute;
-  display: block;
-}
+            background: linear-gradient(#141e30, #243b55);
+            background-image: url("{{url_for('static', filename='pic.jpg')}}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
 
-a span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
-  animation: btn-anim1 1s linear infinite;
-}
+        .heading {
+            text-align: center !important;
+            margin: 2%;
+            font-family: "Girassol", cursive;
+            color: black;
+            font-size: 4rem;
+        }
 
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,100% {
-    left: 100%;
-  }
-}
+        a {
+            top: 100px;
+            left: 480px;
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #03e9f4;
+            background-color: black;
+            font-size: 18px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: 0.5s;
+            margin-top: 40px;
+            letter-spacing: 4px;
+        }
 
-a span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
-  animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
-}
+        a:hover {
+            background: #03e9f4;
+            color: #000;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+        }
 
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,100% {
-    top: 100%;
-  }
-}
+        a span {
+            position: absolute;
+            display: block;
+        }
 
-a span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
-  animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
-}
+        a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #03e9f4);
+            animation: btn-anim1 1s linear infinite;
+        }
 
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,100% {
-    right: 100%;
-  }
-}
+        @keyframes btn-anim1 {
+            0% {
+                left: -100%;
+            }
 
-a span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
-  animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
-}
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
 
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,100% {
-    bottom: 100%;
-  }
-}
+        a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #03e9f4);
+            animation: btn-anim2 1s linear infinite;
+            animation-delay: 0.25s;
+        }
 
-.result{
-    font-size: 2.2em;
-    margin-left: 44%;
-    margin-top: 5%;
-    font-weight: bold;
-}
+        @keyframes btn-anim2 {
+            0% {
+                top: -100%;
+            }
+
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
+
+        a span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #03e9f4);
+            animation: btn-anim3 1s linear infinite;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes btn-anim3 {
+            0% {
+                right: -100%;
+            }
+
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
+
+        a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #03e9f4);
+            animation: btn-anim4 1s linear infinite;
+            animation-delay: 0.75s;
+        }
+
+        @keyframes btn-anim4 {
+            0% {
+                bottom: -100%;
+            }
+
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
+
+        .result {
+            font-size: 2.2em;
+            margin-left: 44%;
+            margin-top: 5%;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
     <h1 class="heading">Result</h1>
-    <div class="result" style="text-align: center;">{{ predict }}</div>    
-    <br>
-    <a href="/">
-        Go Back to Home Page
-      </a>
+    <div class="result" style="text-align: center">{{ predict }}</div>
+    <br />
+    <a href="/"> Go Back to Home Page </a>
 </body>
+
 </html>
