@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 class ClickbaitedForm(Form):
     title = TextField("Enter the Article title", validators=[
-        validators.InputRequired(), validators.Length(min=10,max=1000)
+        validators.InputRequired(), validators.Length(min=10)
     ])
     submit = SubmitField("Submit")
 
@@ -26,10 +26,10 @@ class ReusableForm(Form):
     # seed = TextField("Enter a seed string or 'random':", validators=[
     #                  validators.InputRequired()])
     title = TextField("Enter the Article title", validators=[
-        validators.InputRequired(), validators.Length(min=10,max=50)
+        validators.InputRequired(), validators.Length(min=10)
     ])
     articletext = TextField("Enter the text of Article", validators=[
-        validators.InputRequired(), validators.Length(min=20,max=5000)
+        validators.InputRequired(), validators.Length(min=20)
     ])
     # # Diversity of predictions
     # diversity = DecimalField('Enter diversity:', default=0.8,
