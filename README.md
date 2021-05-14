@@ -17,17 +17,16 @@ The two types can be classified as follows:
 
 ## Dataset:
 - The clickbait dataset contains, only two attributes: 
-> Tagline: The main heading of the content
-
-  ClickBait: (0 or 1) weather the given news in clickbaited or not.
+>   Tagline: The main heading of the content
+>   ClickBait: (0 or 1) weather the given news in clickbaited or not.
 
 
 - The Fake news articles contains 6 attributes, the main attributes are:
-> Title: Title of the article.
+>   Title: Title of the article.
 
-  Text: Content of the news article
+>   Text: Content of the news article
 
-  Label: Indicates news article is fake or not
+>   Label: Indicates news article is fake or not
 
 
 # Accuracy
