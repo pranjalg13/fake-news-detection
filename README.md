@@ -21,4 +21,4 @@ We also made a GUI in the form of the website for the detector
 ![Clickbait-Detector](./demo_assets/clickbait.JPG)
 
 ### Short Demo (Please Give it sometime to Load 😃)
-![Demo_Video](./demo_assets/demo.mp4)
+![Demo_Video](./demo_assets/demo.gif)
