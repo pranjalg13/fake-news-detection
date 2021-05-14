@@ -8,6 +8,7 @@ from tensorflow.keras.preprocessing.text import one_hot
 sent_length= 5000
 voc_size = 10000
 
+# Cleaning the input Text
 def wordopt(text):
     text = text.lower()
     text = re.sub('\[.*?\]', '', text)
@@ -19,6 +20,7 @@ def wordopt(text):
     text = re.sub('\w*\d\w*', '', text)    
     return text
 
+# Encoding the Text for Fake News as one-hot-encoding
 def get_encoded_text(articletext):
     corpus = articletext
     corpus = wordopt(articletext)
@@ -28,23 +30,3 @@ def get_encoded_text(articletext):
     onehot_repr=[tf.keras.preprocessing.text.one_hot(words, voc_size) for words in ans] 
     embedded_docs=pad_sequences(onehot_repr,padding='pre',maxlen=sent_length)
     return embedded_docs
-
-# corpus = "My Text of Article"
-# print(corpus)
-# corpus = wordopt(corpus)
-# corpus = " ".join(corpus.split())
-# print(corpus)
-# ans = []
-# ans.append(corpus)
-# print(ans)
-
-
-# onehot_repr=[tf.keras.preprocessing.text.one_hot(
-#     words, voc_size) for words in ans] 
-# onehot_repr
-
-# embedded_docs=pad_sequences(onehot_repr,padding='pre',maxlen=sent_length)
-# print(embedded_docs)
-
-# predict = loaded_model.predict_classes(embedded_docs)
-# print(predict)
