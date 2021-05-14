@@ -15,31 +15,19 @@ The two types can be classified as follows:
 # Models
 
 
-### Datasets
+## Dataset:
 - The clickbait dataset contains, only two attributes: 
 > Tagline: The main heading of the content
+
   ClickBait: (0 or 1) weather the given news in clickbaited or not.
 
 
 - The Fake news articles contains 6 attributes, the main attributes are:
 > Title: Title of the article.
+
   Text: Content of the news article
+
   Label: Indicates news article is fake or not
-
-### Refrences
-> Dataset and Features: 
-
-- https://www.kaggle.com/c/fake-news/data?select=train.csv (Fake-News-Dataset)
-- https://www.kaggle.com/amananandrai/clickbait-dataset (Clickbait Dataset)
-
-> Research Papers:
-
-- For FakeNews:
-    - https://www.ijitee.org/wp-content/uploads/papers/v8i11/K18290981119.pdf
-    - https://link.springer.com/chapter/10.1007%2F978-981-15-8354-4_26
-- For Clickbait:
-    - https://link.springer.com/chapter/10.1007/978-3-319-30671-1_72
-    - https://cutt.ly/2bdhA9p
 
 
 # Accuracy
@@ -65,6 +53,24 @@ We also made a GUI in the form of the website for the detector. The Backend is m
 
 ### Short Demo (Please Give it sometime to Load 😃)
 ![Demo_Video](./demo_assets/demo.gif)
+
+
+## Refrences
+> Dataset and Features: 
+
+- https://www.kaggle.com/c/fake-news/data?select=train.csv (Fake-News-Dataset)
+- https://www.kaggle.com/amananandrai/clickbait-dataset (Clickbait Dataset)
+
+> Research Papers:
+
+- For FakeNews:
+    - https://www.ijitee.org/wp-content/uploads/papers/v8i11/K18290981119.pdf
+    - https://link.springer.com/chapter/10.1007%2F978-981-15-8354-4_26
+- For Clickbait:
+    - https://link.springer.com/chapter/10.1007/978-3-319-30671-1_72
+    - https://cutt.ly/2bdhA9p
+
+
 
 # Future Scope
 - Integration of this service in a form of plugin in social media website/apps to prevent spreading of misinformation and changing people views during election.
