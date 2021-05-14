@@ -15,7 +15,7 @@ Just this and you are good to go
 We also made a GUI in the form of the website for the detector
 
 ### Fake News Detector
-![Fake-News-Detector](../demo_assets/fakenews.JPG)
+![Fake-News-Detector](./demo_assets/fakenews.JPG)
 
 ### Clickbait Detector
 
