@@ -18,7 +18,7 @@ We also made a GUI in the form of the website for the detector
 ![Fake-News-Detector](./demo_assets/fakenews.JPG)
 
 ### Clickbait Detector
-![Clickbait-Detector](./demo_assets/clickbaitmodel.JPG)
+![Clickbait-Detector](./demo_assets/clickbait.JPG)
 
-# Short Demo (Please Give it sometime to Load 😃)
+### Short Demo (Please Give it sometime to Load 😃)
 ![Demo_Video](./demo_assets/demo.mp4)
