@@ -13,9 +13,9 @@ The two types can be classified as follows:
 - Clickbait News: is defined as content whose main purpose is to draw attention and encourage visitors to click on a link to a specific website. 
 
 # Models
-#### Fake News Model:
+## Fake News Model:
 
-##### LSTM:
+## LSTM:
 LSTM is a variant of Recurrent Neural Network (RNN) which has a memory cell. It performs better than vanilla RNN on long sequential data. LSTM was designed to overcome the vanishing gradient problem in RNN.
 
 All recurrent neural networks have the form of a chain of repeating modules of neural network. In standard RNNs, this repeating module will have a very simple structure, such as a single tanh layer.
@@ -26,10 +26,25 @@ LSTM cells are composed of several gates like input, output and forget gates to 
 
 We’ve trained our simple LSTM model on a fake news dataset and got an accuracy of 92.7%.
 
-#### ClickBait Model:
+## ClickBait Model:
 For the clickbait model, We worked on 4 different models and the model with highest accuracy was implemented in the website.
 
-##### 2. Logistic Regression:  
+## 1. Multinomial Naive Bayes
+Naïve Bayes, which is computationally very efficient and easy to implement, is a learning algorithm frequently used in text classification problems. Two event models are commonly used: 
+1.Multivariate Bernoulli Event Model
+2.Multivariate Event Model
+
+The Multivariate Event model is referred to as Multinomial Naive Bayes.
+Naive Bayes is based on Bayes’ theorem, where the adjective Naïve says that features in the dataset are mutually independent.Being relatively robust, easy to implement, fast, and accurate, it is used in many different fields.
+
+Multinomial Naïve Bayes consider a feature vector where a given term represents the number of times it appears or very often i.e. frequency.
+
+The main advantages are:
+-> Low computation cost.
+-> It can effectively work with large datasets.
+-> For small sample sizes, Naive Bayes can outperform the most powerful alternatives.
+
+## 2. Logistic Regression:  
 Logistic regression is a classification algorithm used to predict the probability of a target variable. It is a predictive analysis algorithm and based on the concept of probability. 
 
 Logistic Regression uses a more complex cost function as compared to linear regression, this cost function can be defined as the ‘Sigmoid function’.
@@ -39,7 +54,7 @@ The sigmoid function maps any real value into another value between 0 and 1. In 
 Hypothesis representation of Logistic Regression :
 > hΘ(x) = 1/(1 + e^-(β₀ + β₁X).
 
-##### 3.Random Forest
+## 3.Random Forest
 Random forest is a supervised learning algorithm.Random forest can be used for both classification and regression problems, which form the majority of current machine learning systems.
 
 Random forests (RF) are basically a bag containing n Decision Trees (DT) having a different set of hyper-parameters and trained on different subsets of data.
@@ -54,8 +69,10 @@ The detailed Working of Random Forest can be described as below:
 
 The greater number of trees in the forest leads to higher accuracy and prevents the problem of overfitting.
 
+
 # Accuracy
 The Accuracy of the models is as follows:
+
 **LSTM model**
 > 92.7%
 
@@ -71,6 +88,7 @@ The Accuracy of the models is as follows:
 **Passive Aggressive model**
 > 96.1%
 
+**So, For Fake News we used LSTM and for clickbait we used Multinomial NB model as it has the highest accuracy**
 
 ## Dataset:
 - The clickbait dataset contains, only two attributes: 
