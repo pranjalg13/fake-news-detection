@@ -40,8 +40,11 @@ Naive Bayes is based on Bayes’ theorem, where the adjective Naïve says that f
 Multinomial Naïve Bayes consider a feature vector where a given term represents the number of times it appears or very often i.e. frequency.
 
 The main advantages are:
+<br/>
 -> Low computation cost.
+<br/>
 -> It can effectively work with large datasets.
+<br/>
 -> For small sample sizes, Naive Bayes can outperform the most powerful alternatives.
 
 ## 2. Logistic Regression:  
