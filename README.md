@@ -13,6 +13,63 @@ The two types can be classified as follows:
 - Clickbait News: is defined as content whose main purpose is to draw attention and encourage visitors to click on a link to a specific website. 
 
 # Models
+#### Fake News Model:
+
+##### LSTM:
+LSTM is a variant of Recurrent Neural Network (RNN) which has a memory cell. It performs better than vanilla RNN on long sequential data. LSTM was designed to overcome the vanishing gradient problem in RNN.
+
+All recurrent neural networks have the form of a chain of repeating modules of neural network. In standard RNNs, this repeating module will have a very simple structure, such as a single tanh layer.
+
+![Repeating-module](https://miro.medium.com/max/875/0*qvrpDiiTCMKFRQNd)
+
+LSTM cells are composed of several gates like input, output and forget gates to preserve memory to a certain extent. At each timestep, LSTM cell can choose to read, write or reset the cell by using an explicit gating mechanism.
+
+We’ve trained our simple LSTM model on a fake news dataset and got an accuracy of 92.7%.
+
+#### ClickBait Model:
+For the clickbait model, We worked on 4 different models and the model with highest accuracy was implemented in the website.
+
+##### 2. Logistic Regression:  
+Logistic regression is a classification algorithm used to predict the probability of a target variable. It is a predictive analysis algorithm and based on the concept of probability. 
+
+Logistic Regression uses a more complex cost function as compared to linear regression, this cost function can be defined as the ‘Sigmoid function’.
+
+The sigmoid function maps any real value into another value between 0 and 1. In ML, sigmoid function is used to map predictions to probabilities.The hypothesis of logistic regression tends it to limit the cost function between 0 and 1. 
+
+Hypothesis representation of Logistic Regression :
+> hΘ(x) = 1/(1 + e^-(β₀ + β₁X).
+
+##### 3.Random Forest
+Random forest is a supervised learning algorithm.Random forest can be used for both classification and regression problems, which form the majority of current machine learning systems.
+
+Random forests (RF) are basically a bag containing n Decision Trees (DT) having a different set of hyper-parameters and trained on different subsets of data.
+
+Instead of relying on one decision tree, random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction.  
+
+The detailed Working of Random Forest can be described as below:
+--> First, select random samples from a given dataset.
+--> Then this algorithm will construct a decision tree for every sample. Then it will get the prediction result from every decision tree.
+--> In the next step, voting will be performed for every predicted result.
+--> At last, select the most voted prediction result as the final prediction result.
+
+The greater number of trees in the forest leads to higher accuracy and prevents the problem of overfitting.
+
+# Accuracy
+The Accuracy of the models is as follows:
+**LSTM model**
+> 92.7%
+
+**Multinomial NB model**
+> 96.7%
+
+**Logistic Regression model**
+> 94.9%
+   
+**Random Forest model**
+> 92.1%
+
+**Passive Aggressive model**
+> 96.1%
 
 
 ## Dataset:
@@ -29,7 +86,6 @@ The two types can be classified as follows:
 >   Label: Indicates news article is fake or not
 
 
-# Accuracy
 
 # How to Run?
 
