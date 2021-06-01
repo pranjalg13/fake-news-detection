@@ -62,11 +62,15 @@ Random forests (RF) are basically a bag containing n Decision Trees (DT) having 
 Instead of relying on one decision tree, random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction.  
 
 The detailed Working of Random Forest can be described as below:
+<br/>
 --> First, select random samples from a given dataset.
+<br/>
 --> Then this algorithm will construct a decision tree for every sample. Then it will get the prediction result from every decision tree.
+<br/>
 --> In the next step, voting will be performed for every predicted result.
+<br/>
 --> At last, select the most voted prediction result as the final prediction result.
-
+<br/>
 The greater number of trees in the forest leads to higher accuracy and prevents the problem of overfitting.
 
 
