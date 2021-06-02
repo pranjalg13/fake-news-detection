@@ -76,6 +76,20 @@ The detailed Working of Random Forest can be described as below:
 <br/>
 The greater number of trees in the forest leads to higher accuracy and prevents the problem of overfitting.
 
+## 4. Passive Aggressive model
+
+Passive-Aggressive Algorithms are generally used for large-scale learning. It's one among the few 'online-learning algorithms'. 
+It works by responding as passive for proper classifications and responding as aggressive for any miscalculation.
+
+Passive-Aggressive Algorithms are somewhat almost like a Perceptron model, within the sense that they are doing not require a learning rate. However, they are doing include a regularization parameter.
+
+Passive Aggressive Classifier is where you'll train a system incrementally by feeding it instances sequentially, individually, or in small groups called mini-batches and thus, it ​is best for systems that receive data during a continuous stream.
+
+Passive-Aggressive Algorithms are called so because:-
+<br/>
+--> Passive: If the prediction is correct, keep the model and don't make any changes. i.e., the data within the example isn't enough to cause any changes within the model. 
+<br/>
+--> Aggressive: If the prediction is wrong/incorrect, make changes to the model. i.e., some change to the model may correct it.
 
 # Accuracy
 The Accuracy of the models is as follows:
