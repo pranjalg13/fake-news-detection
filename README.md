@@ -65,15 +65,11 @@ Random forests (RF) are basically a bag containing n Decision Trees (DT) having 
 Instead of relying on one decision tree, random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction.  
 
 The detailed Working of Random Forest can be described as below:
-<br/>
---> First, select random samples from a given dataset.
-<br/>
---> Then this algorithm will construct a decision tree for every sample. Then it will get the prediction result from every decision tree.
-<br/>
---> In the next step, voting will be performed for every predicted result.
-<br/>
---> At last, select the most voted prediction result as the final prediction result.
-<br/>
+The detailed Working of Random Forest can be described as below:
+- First, select random samples from a given dataset.
+- Then this algorithm will construct a decision tree for every sample. Then it will get the prediction result from every decision tree.
+- In the next step, voting will be performed for every predicted result.
+- At last, select the most voted prediction result as the final prediction result.
 The greater number of trees in the forest leads to higher accuracy and prevents the problem of overfitting.
 
 ## 4. Passive Aggressive model
@@ -113,16 +109,14 @@ The Accuracy of the models is as follows:
 
 ## Dataset:
 - The clickbait dataset contains, only two attributes: 
->   Tagline: The main heading of the content
->   ClickBait: (0 or 1) weather the given news in clickbaited or not.
+    - Tagline: The main heading of the content
+    - ClickBait: (0 or 1) weather the given news in clickbaited or not.
 
 
 - The Fake news articles contains 6 attributes, the main attributes are:
->   Title: Title of the article.
-
->   Text: Content of the news article
-
->   Label: Indicates news article is fake or not
+    - Title: Title of the article.
+    - Text: Content of the news article
+    - Label: Indicates news article is fake or not
 
 
 
@@ -165,6 +159,8 @@ We also made a GUI in the form of the website for the detector. The Backend is m
     - https://cutt.ly/2bdhA9p
 
 
+# Contribution
+For contribtuion please refer to the contribution guideline.
 
 # Future Scope
 - Integration of this service in a form of plugin in social media website/apps to prevent spreading of misinformation and changing people views during election.
