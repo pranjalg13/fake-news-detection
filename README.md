@@ -170,3 +170,6 @@ We also made a GUI in the form of the website for the detector. The Backend is m
 - Integration of this service in a form of plugin in social media website/apps to prevent spreading of misinformation and changing people views during election.
 - Implementing this with Fake Indian Political News so that there is less misinformation.
 
+Happy coding !
+
+With 💚 from India.
