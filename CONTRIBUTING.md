@@ -1,7 +1,7 @@
 <p> If you do not know how to create a pull request follow <a href="https://www.youtube.com/watch?v=rgbCcBNZcdQ">this tutorial</a></p>
 
 
-# <img src="https://cdn.svgporn.com/logos/uservoice.svg" height="40"> Contributing to `fake-news-detection`
+# Contributing to `fake-news-detection`
 
 
 For starters, you could help in improving the sections in this document by either creating a new issue describing the improvement or submitting a pull request to this repository. 
