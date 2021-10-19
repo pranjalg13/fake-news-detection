@@ -143,7 +143,7 @@ We also made a GUI in the form of the website for the detector. The Backend is m
 ![Demo_Video](./demo_assets/demo.gif)
 
 
-## Refrences
+## References
 > Dataset and Features: 
 
 - https://www.kaggle.com/c/fake-news/data?select=train.csv (Fake-News-Dataset)

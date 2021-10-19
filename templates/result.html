@@ -2,27 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
-  <title>Result</title>
-  <link rel="stylesheet" href="./styles/result.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'styles/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'styles/navbar.css') }}">
 </head>
 
 <body>
-  <h1 class="heading">Result</h1>
-  <div class="result login-box">{{ predict }}</div>
+{% include 'navbar.html' %}
+<h1 class="heading">Result</h1>
+<div class="result login-box">{{ predict }}</div>
 
-  <br>
-  <a href="/">
+<br>
+<a href="/">
     <span></span>
     <span></span>
     <span></span>
     <span></span>
     Go Back to Home Page
-  </a>
+</a>
 </body>
 
 </html>
