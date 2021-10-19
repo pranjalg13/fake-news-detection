@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css')}}">
 
 </head>
 
 
-<body>
+<body background="{{ url_for('static', filename='img/pic.jpg') }}">
   <h1 class="heading">Fake News Predictor</h1>
   {% for message in form.title.errors %}
   <div class="alert alert-primary" role="alert">{{ message }}</div>
@@ -35,7 +35,8 @@
       <button type="submit" class="btn btn-primary"><span></span>
         <span></span>
         <span></span>
-        <span></span>Submit</button>
+        <span></span>Submit
+      </button>
     </form>
   </div>
 
