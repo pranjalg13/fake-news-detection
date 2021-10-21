@@ -6,7 +6,6 @@ html {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-image: url("/static/pic.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -143,6 +142,12 @@ html {
     background: linear-gradient(360deg, transparent, #03e9f4);
     animation: btn-anim4 1s linear infinite;
     animation-delay: .75s
+  }
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
   }
 
   @keyframes btn-anim4 {
